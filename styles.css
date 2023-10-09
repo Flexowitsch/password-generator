@@ -1,0 +1,237 @@
+:root {
+    --darkblue: #1f2837;
+    --output: #273549;
+    --green: #4ADF86;
+    --white: #fff;
+    --horizontal-rule: #2F3E53;
+    --button: #10B981;
+    --button-hover: #10B981;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Karla', sans-serif;
+    background: var(--darkblue);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* basic layout */ 
+
+.interface-container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 34.375rem;
+    background-color: var(--darkblue);
+    border-radius: 41px;
+    background: #1f2837;
+    box-shadow: 15px 15px 34px #181f2b,
+        -15px -15px 34px #263143;
+    padding: 115px 52px;
+}
+
+.option-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 1.68rem;
+}
+
+
+label {
+    color: var(--Medium-grey, #D5D4D8);
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+    /* 175% */
+    text-transform: capitalize;
+    display: flex;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom Style of the Checkboxes */
+
+/* Create a custom checkbox container */
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.125rem;
+    border: 1px solid #D5D4D8;
+
+}
+
+/* Style the custom checkbox when it's checked */
+input[type="checkbox"]:checked+.custom-checkbox {
+    border-color: #4ADF86;
+    ;
+}
+
+/* Style the checkmark inside the custom checkbox */
+input[type="checkbox"]:checked+.custom-checkbox::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--green);
+    border-radius: 2px;
+    /* Adjust the border-radius for a square shape */
+    margin: 2px;
+    /* Add some spacing around the square */
+    transition: ease-in-out 150ms;
+}
+
+/* Custom Style of the Range Slider */
+.range-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--white);
+    height: 1px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+    background: #053a5f;
+    height: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -12px;
+    /* Centers thumb on the track */
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 2.8125rem;
+    border: 1px solid #4ADF86;
+    background: #4ADF86;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.09);
+
+
+}
+
+#rangeValue {
+    width: 20px;
+    color: var(--white);
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.75rem;
+
+}
+
+button {
+    border-radius: 0.375rem;
+    background: var(--green);
+    padding: 0.5625rem 1.0625rem 0.5625rem 0.9375rem;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: var(--white);
+    /* text-base/leading-6/font-medium */
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+    /* 150% */
+    border: none;
+}
+
+button:hover {
+    background: var(--button-hover);
+    transition: ease-in-out 150ms;
+}
+
+hr {
+    margin: 2.19rem 0;
+    border-color: var(--horizontal-rule);
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.password-output {
+    flex-grow: 1;
+    min-height: 40px;
+    background-color: var(--output);
+    padding: 4px 16px;
+    color: var(--green);
+    text-align: center;
+    color: #55F991;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    border-radius: 0.375rem;
+    margin: 0;
+}
+
+/* typography */
+
+h1 {
+    color: var(--white);
+    font-family: Karla;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 2.5rem;
+    /* 100% */
+    letter-spacing: -0.0625rem;
+    margin: 0;
+    margin-bottom: 0.62rem;
+}
+
+h1 span {
+    color: var(--green)
+}
+
+p.subline {
+    color: var(--Medium-grey, #D5D4D8);
+    /* text-xl/leading-7/font-normal */
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+    /* 140% */
+    margin-top: 0;
+    margin-bottom: 2.63rem;
+}
+
+

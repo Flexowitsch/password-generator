@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <div class="interface-container">
+        <h1>Generate a <br><span>random Password</span></h1>
+        <p class="subline">Never use an insecure password again.</p>
+        <div class="option-container">
+
+            <label>
+                numbers
+                <input type="checkbox" id="numbersOption">
+                <span class="custom-checkbox"></span>
+            </label>
+
+           
+
+            <label>
+                symbols
+                <input type="checkbox" id="symbolsOption">
+                <span class="custom-checkbox"></span>
+            </label>
+
+            <div class="range-container">
+                <label for="passwordLength">length</label>
+
+                <input type="range" id="passwordLength" min="0" max="64" value="32">
+                <span id="rangeValue">24</span>
+
+            </div>
+
+        </div>
+        <button id="generatePwBtn">Generate Password</button>
+        <hr>
+        <div class="output-container">
+            <p class="password-output" id="passwordOneDisplay"></p>
+            <p class="password-output" id="passwordTwoDisplay"></p>
+        </div>
+        <p id="copyMessage">Copied to Clipboard</p>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
