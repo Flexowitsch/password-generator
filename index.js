@@ -13,6 +13,7 @@ const numbersOption = document.getElementById("numbersOption");
 const symbolsOption = document.getElementById("symbolsOption");
 const passwordOneDisplay = document.getElementById("passwordOneDisplay");
 const passwordTwoDisplay = document.getElementById("passwordTwoDisplay");
+const copyMessage = document.getElementById("copyMessage");
 
 // Interface Variables
 const rangeInput = document.getElementById("passwordLength");
@@ -62,6 +63,9 @@ function generateNumber() {
 function createPassword() {
   passwordOne = ""; // Reset the passwords
   passwordTwo = "";
+
+  //reset copy message
+  copyMessage.style.display = "none";
 
   if (useNumbers === false && useSymbols === false) {
 
@@ -149,4 +153,26 @@ function createPassword() {
 // Add the click event listener
 generatePwBtn.addEventListener("click", createPassword);
 
-console.log("hey robin")
+
+
+// Add a click event listener to passwordOneDisplay
+passwordOneDisplay.addEventListener("click", function () {
+  copyToClipboard(passwordOne);
+  copyMessage.style.display = "block";
+});
+
+// Add a click event listener to passwordTwoDisplay
+passwordTwoDisplay.addEventListener("click", function () {
+  copyToClipboard(passwordTwo);
+  copyMessage.style.display = "block";
+});
+
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
